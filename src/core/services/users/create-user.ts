@@ -1,10 +1,13 @@
 import { prisma } from "@/lib/prisma";
-import { hashPassword } from "@/lib/password";
+import { hashPassword } from "@/utils/password";
 import { CreateUserDto, User } from "@/core/model/users.model";
 import { HttpError } from "@/lib/http-error";
 
 export class CreateUser {
-  async execute(data: CreateUserDto): Promise<User> {
+  async execute(data: CreateUserDto): Promise<{
+    message: string;
+    user: User;
+  }> {
     try {
       // Verificar se email já existe
       const existingUser = await prisma.user.findUnique({
@@ -34,7 +37,10 @@ export class CreateUser {
         },
       });
 
-      return user as User;
+      return {
+        message: "Usuário criado com sucesso",
+        user: user as User
+      };
     } catch (error) {
       if (error instanceof HttpError) {
         throw error;
