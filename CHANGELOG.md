@@ -1,3 +1,15 @@
+## [1.1.0](https://github.com/limazia/ph7/compare/v1.0.1...v1.1.0) (2025-09-25)
+
+### ✨ Recursos
+
+* **docker:** add name field to docker-compose configuration ([6440e9f](https://github.com/limazia/ph7/commit/6440e9f16c50c708bd3101a5662ec5a8056c11e8))
+* **migrations:** migrate database from MySQL to PostgreSQL with updated user schema ([77eb4e3](https://github.com/limazia/ph7/commit/77eb4e3bfcec018f31fd7b8e513db52435b0860f))
+* **database:** switch database provider from MySQL to PostgreSQL ([9467acf](https://github.com/limazia/ph7/commit/9467acf94fbf91fadcb073a2117c51e418be23e7))
+
+### 🐛 Correções de Bugs
+
+* **package:** correct docker-compose command syntax in package.json ([847287a](https://github.com/limazia/ph7/commit/847287ade3357cbdceb2599332e6adc65393f03a))
+
 ## [1.0.1](https://github.com/limazia/ph7/compare/v1.0.0...v1.0.1) (2025-09-25)
 
 ### 📚 Documentação
