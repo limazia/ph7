@@ -1,6 +1,6 @@
 import { prisma } from "@/lib/prisma";
-import { hashPassword } from "@/lib/password";
-import { User, UserParamsDto, UpdateUserDto } from "@/core/model/users.model";
+import { hashPassword } from "@/utils/password";
+import { User, UpdateUserDto } from "@/core/model/users.model";
 import { HttpError } from "@/lib/http-error";
 
 export class UpdateUserById {
