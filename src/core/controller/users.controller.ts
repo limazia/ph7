@@ -159,7 +159,7 @@ class UserController {
         statusCode: 400,
         type: "validation_error",
         message: "Dados inválidos",
-        errors: validation.error.errors,
+        path: validation.error.errors,
       });
     }
 
