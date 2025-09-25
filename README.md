@@ -1,4 +1,4 @@
- # PH7 - API de Usuários
+# PH7
 
 Uma API RESTful simples e funcional para gerenciamento de usuários, construída com Node.js, TypeScript, Express, Prisma e PostgreSQL.
 
@@ -6,7 +6,7 @@ Uma API RESTful simples e funcional para gerenciamento de usuários, construída
 
 - Node.js (versão 16 ou superior)
 - Docker e Docker Compose
-- npm ou yarn
+- Yarn (recomendado)
 
 ## 🛠️ Instalação
 
@@ -18,9 +18,7 @@ cd ph7
 
 2. Instale as dependências:
 ```bash
-npm install
-# ou use o package-new.json se necessário
-# cp package-new.json package.json && npm install
+yarn install
 ```
 
 3. Configure as variáveis de ambiente:
@@ -30,29 +28,29 @@ cp .env.example .env
 
 4. Suba o banco de dados PostgreSQL com Docker:
 ```bash
-npm run docker:up
+yarn compose
 ```
 
 5. Execute as migrações do banco:
 ```bash
-npm run db:migrate
+yarn db:migrate dev --name init
 ```
 
 6. Gere o cliente Prisma:
 ```bash
-npm run db:generate
+yarn db:generate
 ```
 
 7. (Opcional) Popular dados iniciais:
 ```bash
-npm run db:seed
+yarn db:seed
 ```
 
 ## 🏃‍♂️ Como usar
 
 ### Desenvolvimento
 ```bash
-npm run dev
+yarn dev
 ```
 
 A API estará disponível em: `http://localhost:3000`
@@ -60,23 +58,23 @@ A documentação Swagger em: `http://localhost:3000/docs` (só em development)
 
 ### Produção
 ```bash
-npm run build
-npm start
+yarn build
+yarn start
 ```
 
 ### Outros comandos úteis
 ```bash
-# Verificar código com ESLint
-npm run lint
-
-# Corrigir problemas de formatação
-npm run lint:fix
+# Gerar documentação Swagger
+yarn swagger
 
 # Visualizar dados no Prisma Studio
-npm run db:studio
+yarn db:studio
+
+# Push do schema para o banco (sem migrações)
+yarn db:push
 
 # Parar containers Docker
-npm run docker:down
+docker compose down
 ```
 
 ## 📚 API Documentation
