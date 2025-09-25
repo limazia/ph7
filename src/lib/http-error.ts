@@ -4,7 +4,7 @@ export class HttpError {
   public readonly code: string;
   public readonly statusCode: number;
 
-  constructor(message: string, statusCode = 400, type = "error", code = "unknow") {
+  constructor(message: string, statusCode = 500, type = "error", code = "unknow") {
     this.message = message;
     this.type = type;
     this.code = code;
