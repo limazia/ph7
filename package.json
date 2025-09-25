@@ -7,7 +7,7 @@
     "start": "node dist/app.js",
     "dev": "tsx watch -r tsconfig-paths/register src/app.ts",
     "swagger": "tsx scripts/generate-swagger.ts",
-    "compose": "docker compose docker-compose.yaml up -d",
+    "compose": "docker compose -f docker-compose.yaml up -d",
     "db:generate": "prisma generate",
     "db:migrate": "prisma migrate",
     "db:studio": "prisma studio",
