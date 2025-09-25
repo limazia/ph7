@@ -1,11 +1,28 @@
+import { prisma } from "@/lib/prisma";
+import { UserParamsDto } from "@/core/model/users.model";
 import { HttpError } from "@/lib/http-error";
 
 export class DeleteUserById {
-  async execute({ id }: { id: string }) {
+  async execute({ id }: UserParamsDto): Promise<void> {
     try {
-      return { id };
+      // Verificar se usuário existe
+      const existingUser = await prisma.user.findUnique({
+        where: { id }
+      });
+
+      if (!existingUser) {
+        throw new HttpError("Usuário não encontrado", 404, "not_found");
+      }
+
+      // Deletar usuário
+      await prisma.user.delete({
+        where: { id },
+      });
     } catch (error) {
-      throw new HttpError("Erro ao buscar o usuário.");
+      if (error instanceof HttpError) {
+        throw error;
+      }
+      throw new HttpError("Erro ao deletar o usuário", 500, "internal_error");
     }
   }
 }
