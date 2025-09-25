@@ -1,3 +1,23 @@
+## [1.2.0](https://github.com/limazia/ph7/compare/v1.1.0...v1.2.0) (2025-09-25)
+
+### ✨ Recursos
+
+* **password:** add password hashing and comparison utilities ([0bd3b05](https://github.com/limazia/ph7/commit/0bd3b05d12f3316ff7ee5b11ef83a0e2d57442a8))
+
+### 🐛 Correções de Bugs
+
+* **tsconfig:** add missing path mapping for [@config](https://github.com/config) ([c35347f](https://github.com/limazia/ph7/commit/c35347f694518f60931932c0a6547715fc1aef42))
+* **users:** correct import path for password utility in update user service ([eef0df7](https://github.com/limazia/ph7/commit/eef0df76366921929b6be9957db8693ecb8baf1c))
+* **server:** ensure newline at end of file ([83eaf83](https://github.com/limazia/ph7/commit/83eaf83d9c349d3bce0cdc92c6d71a60f3495332))
+* **swagger:** update API version to 1.1.0 ([21143a6](https://github.com/limazia/ph7/commit/21143a65a0b2d53b60606e86e9c35356e743ecac))
+* **http-error:** update default status code in HttpError constructor to 500 ([e3cf0c8](https://github.com/limazia/ph7/commit/e3cf0c81b7874c417dae3618643ff2fe8b760676))
+* **users:** update error response structure for validation errors ([ea6baca](https://github.com/limazia/ph7/commit/ea6bacad22038daf6c452c97eba9cd2dbbd96d64))
+
+### 🔨 Refatoração de Código
+
+* **users:** streamline pagination handling and improve error reporting ([88c54df](https://github.com/limazia/ph7/commit/88c54df605f54f9c2d6c4bbb7720b07698dc6afd))
+* **users:** update create user response structure and fix import path ([4546b5c](https://github.com/limazia/ph7/commit/4546b5cf2f696d18304eb77ee31de49460d8f551))
+
 ## [1.1.0](https://github.com/limazia/ph7/compare/v1.0.1...v1.1.0) (2025-09-25)
 
 ### ✨ Recursos
