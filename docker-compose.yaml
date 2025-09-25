@@ -1,3 +1,5 @@
+name: "ph7"
+
 services:
   postgres:
     image: postgres:15
