@@ -1,3 +1,9 @@
+## [1.0.1](https://github.com/limazia/ph7/compare/v1.0.0...v1.0.1) (2025-09-25)
+
+### 📚 Documentação
+
+* **README:** update installation instructions to use Yarn and remove npm references ([c572687](https://github.com/limazia/ph7/commit/c572687d52dc0944f733a102e5a0d817ffefb751))
+
 ## 1.0.0 (2025-09-25)
 
 ### ✨ Recursos
