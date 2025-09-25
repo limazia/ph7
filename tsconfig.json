@@ -12,6 +12,7 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"],
+      "@config": ["./src/config/*"],
     }
   },
   "include": ["src/**/*", "src/types/**/*", "test.ts"],
