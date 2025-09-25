@@ -3,17 +3,21 @@ import cors from "cors";
 import express, { NextFunction, Request, Response } from "express";
 import "express-async-errors";
 
+import { corsConfig } from "@/config/cors";
+import { setupSwagger } from "@/config/swagger";
 import { routes } from "@/http/routes";
 import { HttpError } from "@/lib/http-error";
 
-const app = express();
+const server = express();
 
-app.use(cors());
-app.use(bodyParser.json());
+server.use(cors(corsConfig));
+server.use(bodyParser.json());
 
-app.use("/api", routes);
+setupSwagger(server);
 
-app.use(
+server.use(routes);
+
+server.use(
   async (
     error: Error,
     request: Request,
@@ -28,6 +32,8 @@ app.use(
       });
     }
 
+    console.error("Internal server error:", error);
+
     return response.status(500).json({
       statusCode: 500,
       type: "error",
@@ -36,4 +42,4 @@ app.use(
   }
 );
 
-export { app };
+export { server };
